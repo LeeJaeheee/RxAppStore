@@ -13,6 +13,10 @@
 		D269C29D2BC0EB850057F771 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D269C29C2BC0EB850057F771 /* Base */; };
 		D269C29F2BC0EB860057F771 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D269C29E2BC0EB860057F771 /* Assets.xcassets */; };
 		D269C2A22BC0EB860057F771 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D269C2A12BC0EB860057F771 /* Base */; };
+		D269C2AB2BC0EC330057F771 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = D269C2AA2BC0EC330057F771 /* RxCocoa */; };
+		D269C2AD2BC0EC330057F771 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D269C2AC2BC0EC330057F771 /* RxSwift */; };
+		D269C2B02BC0EC4C0057F771 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D269C2AF2BC0EC4C0057F771 /* SnapKit */; };
+		D269C2B32BC0ED090057F771 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = D269C2B22BC0ED090057F771 /* Cosmos */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +35,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D269C2B02BC0EC4C0057F771 /* SnapKit in Frameworks */,
+				D269C2AD2BC0EC330057F771 /* RxSwift in Frameworks */,
+				D269C2B32BC0ED090057F771 /* Cosmos in Frameworks */,
+				D269C2AB2BC0EC330057F771 /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +91,12 @@
 			dependencies = (
 			);
 			name = RxAppStore;
+			packageProductDependencies = (
+				D269C2AA2BC0EC330057F771 /* RxCocoa */,
+				D269C2AC2BC0EC330057F771 /* RxSwift */,
+				D269C2AF2BC0EC4C0057F771 /* SnapKit */,
+				D269C2B22BC0ED090057F771 /* Cosmos */,
+			);
 			productName = RxAppStore;
 			productReference = D269C2922BC0EB850057F771 /* RxAppStore.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +125,11 @@
 				Base,
 			);
 			mainGroup = D269C2892BC0EB840057F771;
+			packageReferences = (
+				D269C2A92BC0EC330057F771 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				D269C2AE2BC0EC4C0057F771 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				D269C2B12BC0ED090057F771 /* XCRemoteSwiftPackageReference "Cosmos" */,
+			);
 			productRefGroup = D269C2932BC0EB850057F771 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -298,8 +317,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,9 +327,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jaehee.RxAppStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -326,8 +350,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -335,9 +360,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jaehee.RxAppStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -363,6 +392,56 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D269C2A92BC0EC330057F771 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.6.0;
+			};
+		};
+		D269C2AE2BC0EC4C0057F771 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		D269C2B12BC0ED090057F771 /* XCRemoteSwiftPackageReference "Cosmos" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/Cosmos";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 25.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D269C2AA2BC0EC330057F771 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D269C2A92BC0EC330057F771 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		D269C2AC2BC0EC330057F771 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D269C2A92BC0EC330057F771 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		D269C2AF2BC0EC4C0057F771 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D269C2AE2BC0EC4C0057F771 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		D269C2B22BC0ED090057F771 /* Cosmos */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D269C2B12BC0ED090057F771 /* XCRemoteSwiftPackageReference "Cosmos" */;
+			productName = Cosmos;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D269C28A2BC0EB840057F771 /* Project object */;
 }
