@@ -25,6 +25,10 @@
 		D269C2CE2BC15AC10057F771 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D269C2CD2BC15AC10057F771 /* DetailViewModel.swift */; };
 		D269C2D82BC250140057F771 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D269C2D72BC250140057F771 /* BaseViewController.swift */; };
 		D269C2DA2BC25E9A0057F771 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D269C2D92BC25E9A0057F771 /* Reusable.swift */; };
+		D269C2DC2BC260F90057F771 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D269C2DB2BC260F90057F771 /* SearchTableViewCell.swift */; };
+		D269C2DE2BC269A60057F771 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D269C2DD2BC269A50057F771 /* SearchModel.swift */; };
+		D269C2E02BC272260057F771 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D269C2DF2BC272260057F771 /* RoundImageView.swift */; };
+		D269C2E42BC2CC380057F771 /* SubLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D269C2E32BC2CC380057F771 /* SubLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +48,10 @@
 		D269C2CD2BC15AC10057F771 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		D269C2D72BC250140057F771 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		D269C2D92BC25E9A0057F771 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		D269C2DB2BC260F90057F771 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		D269C2DD2BC269A50057F771 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
+		D269C2DF2BC272260057F771 /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
+		D269C2E32BC2CC380057F771 /* SubLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +123,7 @@
 		D269C2B62BC0EDED0057F771 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D269C2DD2BC269A50057F771 /* SearchModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -176,6 +185,8 @@
 			isa = PBXGroup;
 			children = (
 				D269C2BE2BC0F3690057F771 /* Cell */,
+				D269C2DF2BC272260057F771 /* RoundImageView.swift */,
+				D269C2E32BC2CC380057F771 /* SubLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -183,6 +194,7 @@
 		D269C2BE2BC0F3690057F771 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				D269C2DB2BC260F90057F771 /* SearchTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -269,8 +281,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D269C2DE2BC269A60057F771 /* SearchModel.swift in Sources */,
 				D269C29A2BC0EB850057F771 /* ViewController.swift in Sources */,
 				D269C2DA2BC25E9A0057F771 /* Reusable.swift in Sources */,
+				D269C2E42BC2CC380057F771 /* SubLabel.swift in Sources */,
 				D269C2C62BC15A810057F771 /* SearchViewController.swift in Sources */,
 				D269C2C02BC0F56C0057F771 /* ViewModelBindableType.swift in Sources */,
 				D269C2CE2BC15AC10057F771 /* DetailViewModel.swift in Sources */,
@@ -278,6 +292,8 @@
 				D269C2D82BC250140057F771 /* BaseViewController.swift in Sources */,
 				D269C2C22BC0F5B80057F771 /* ViewModelType.swift in Sources */,
 				D269C2CA2BC15AA50057F771 /* SearchViewModel.swift in Sources */,
+				D269C2DC2BC260F90057F771 /* SearchTableViewCell.swift in Sources */,
+				D269C2E02BC272260057F771 /* RoundImageView.swift in Sources */,
 				D269C2982BC0EB850057F771 /* SceneDelegate.swift in Sources */,
 				D269C2C82BC15A960057F771 /* DetailViewController.swift in Sources */,
 			);
