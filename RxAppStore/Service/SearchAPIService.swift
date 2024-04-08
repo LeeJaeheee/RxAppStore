@@ -64,25 +64,24 @@ class SearchAPIService {
         return components?.url
     }
     
-    func fetchSearchData(query: String) -> Observable<SearchModel> {
-        
-        return Observable<SearchModel>.create { observer in
+    func fetchSearchData(query: String) -> Single<Result<SearchModel, APIError>> {
+        return Single.create { single in
             
             guard let url = self.buildUrl(query: query) else {
-                observer.onError(APIError.invalidURL)
+                single(.success(.failure(.invalidURL)))
                 return Disposables.create()
             }
             
             URLSession.shared.dataTask(with: url) { data, response, error in
                 
                 if error != nil {
-                    observer.onError(APIError.unknownResponse)
+                    single(.success(.failure(.unknownResponse)))
                     return
                 }
                 
                 guard let response = response as? HTTPURLResponse,
                       (200...299).contains(response.statusCode) else {
-                    observer.onError(APIError.statusError)
+                    single(.success(.failure(.statusError)))
                     return
                 }
                 
@@ -90,13 +89,12 @@ class SearchAPIService {
                     let decoder = JSONDecoder()
                     do {
                         let appData = try decoder.decode(SearchModel.self, from: data)
-                        observer.onNext(appData)
-                        observer.onCompleted()
+                        single(.success(.success(appData)))
                     } catch {
-                        observer.onError(APIError.decodingError)
+                        single(.success(.failure(.decodingError)))
                     }
                 } else {
-                    observer.onError(APIError.unknownResponse)
+                    single(.success(.failure(.unknownResponse)))
                 }
                 
             }.resume()

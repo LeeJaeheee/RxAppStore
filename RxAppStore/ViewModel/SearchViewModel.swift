@@ -30,12 +30,18 @@ final class SearchViewModel: ViewModelType {
         input.searchButtonTap
             .throttle(.seconds(1), scheduler: MainScheduler.instance)
             .withLatestFrom(input.searchText)
-            .flatMap {
+            .flatMap { 
                 SearchAPIService.shared.fetchSearchData(query: $0)
             }
-            .subscribe(with: self, onNext: { owner, value in
-                let data = value.results
-                searchList.accept(data)
+            .subscribe(with: self, onNext: { owner, result in
+                switch result {
+                case .success(let searchModel):
+                    let data = searchModel.results
+                    searchList.accept(data)
+                case .failure(_):
+                    print("========")
+                    break
+                }
             }, onError: { _, _ in
                 print("TransformError")
             }, onCompleted: { _ in
