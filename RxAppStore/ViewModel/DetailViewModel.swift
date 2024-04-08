@@ -6,8 +6,18 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 final class DetailViewModel: ViewModelType {
+    
+    let selectedModelData: SearchResult
+    
+    init(data: SearchResult) {
+        self.selectedModelData = data
+        print("========")
+        print(selectedModelData)
+    }
     
     struct Input {
         

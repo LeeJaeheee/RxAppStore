@@ -10,13 +10,14 @@ import SnapKit
 import RxSwift
 import RxCocoa
 import Cosmos
+import Kingfisher
 
 final class SearchTableViewCellViewModel {
 
     let appName: String
     let appIconURL: URL
     let rating: Double
-    let ratingCount: Int
+    let ratingCount: String
     let artistName: String
     let genre: String
 
@@ -24,11 +25,11 @@ final class SearchTableViewCellViewModel {
     
     init(searchResult: SearchResult) {
         self.appName = searchResult.trackName
-        self.appIconURL = URL(string: searchResult.artworkUrl512)!
+        self.appIconURL = searchResult.appIconUrl
         self.rating = searchResult.averageUserRating
-        self.ratingCount = searchResult.userRatingCount
+        self.ratingCount = searchResult.convertedRatingCount
         self.artistName = searchResult.artistName
-        self.genre = searchResult.genres.first!
+        self.genre = searchResult.mainGenre
     }
     
 }
@@ -37,17 +38,19 @@ final class SearchTableViewCell: UITableViewCell {
     
     private let appNameLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 18, weight: .bold)
+        label.font = .systemFont(ofSize: 17)
         label.textColor = .black
         return label
     }()
     
-    private let appIconImageView = RoundImageView(cornerRadius: 8)
+    private let appIconImageView = RoundImageView(cornerRadius: 12)
     
     private let downloadButton: UIButton = {
         var configuration = UIButton.Configuration.gray()
         configuration.cornerStyle = .capsule
-        configuration.title = "받기"
+        var titleAttr = AttributedString.init("받기")
+        titleAttr.font = .systemFont(ofSize: 16, weight: .bold)
+        configuration.attributedTitle = titleAttr
         return UIButton(configuration: configuration)
     }()
     
@@ -142,9 +145,10 @@ final class SearchTableViewCell: UITableViewCell {
             .bind(to: viewModel.downloadButtonTap)
             .disposed(by: disposeBag)
         
+        appIconImageView.kf.setImage(with: viewModel.appIconURL)
         appNameLabel.text = viewModel.appName
         ratingView.rating = viewModel.rating
-        ratingCountLabel.text = "1만"
+        ratingCountLabel.text = "\(viewModel.ratingCount)"
         artistNameLabel.text = viewModel.artistName
         genreLabel.text = viewModel.genre
     }

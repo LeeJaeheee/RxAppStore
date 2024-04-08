@@ -45,12 +45,12 @@ final class SearchViewController: BaseViewController<SearchViewModel> {
             .disposed(by: disposeBag)
         
         output.modelSelected
+            .asObservable()
             .bind(with: self) { owner, value in
-                print(value)
+                owner.navigationController?.pushViewController(DetailViewController(viewModel: DetailViewModel(data: value)), animated: true)
             }
             .disposed(by: disposeBag)
         
-        output.searchList.onNext([SearchResult(screenshotUrls: [], artworkUrl512: "aa", artistViewURL: "aa", currentVersionReleaseDate: Date(), releaseNotes: "", artistName: "이름이름", genres: ["장르"], trackName: "앱이름", description: "설명", averageUserRating: 4.7, userRatingCount: 111)])
     }
     
     override func configureHierarchy() {
@@ -64,10 +64,8 @@ final class SearchViewController: BaseViewController<SearchViewModel> {
     }
     
     override func configureView() {
-        navigationItem.title = "검색"
-        navigationItem.hidesSearchBarWhenScrolling = false
-        navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
         
         tableView.register(SearchTableViewCell.self, forCellReuseIdentifier: SearchTableViewCell.identifier)
     }
