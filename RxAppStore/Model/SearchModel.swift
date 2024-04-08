@@ -21,6 +21,7 @@ struct SearchResult: Decodable {
     let genres: [String]
     let trackName, description: String
     let averageUserRating: Double
+    let version: String
     let userRatingCount: Int
     
     let mainGenre: String
@@ -37,6 +38,7 @@ struct SearchResult: Decodable {
         case trackName
         case description
         case averageUserRating
+        case version
         case userRatingCount
     }
     
@@ -45,12 +47,13 @@ struct SearchResult: Decodable {
         self.screenshotUrls = try container.decode([String].self, forKey: .screenshotUrls)
         self.artworkUrl512 = try container.decode(String.self, forKey: .artworkUrl512)
         self.currentVersionReleaseDate = try container.decode(String.self, forKey: .currentVersionReleaseDate)
-        self.releaseNotes = try container.decodeIfPresent(String.self, forKey: .releaseNotes)
+        self.releaseNotes = try container.decodeIfPresent(String.self, forKey: .releaseNotes) ?? ""
         self.artistName = try container.decode(String.self, forKey: .artistName)
         self.genres = try container.decode([String].self, forKey: .genres)
         self.trackName = try container.decode(String.self, forKey: .trackName)
         self.description = try container.decode(String.self, forKey: .description)
         self.averageUserRating = try container.decode(Double.self, forKey: .averageUserRating)
+        self.version = "버전 " + (try container.decode(String.self, forKey: .version))
         self.userRatingCount = try container.decode(Int.self, forKey: .userRatingCount)
         self.mainGenre = genres.first ?? ""
         self.convertedRatingCount = userRatingCount.convertRatingCount()
